@@ -20,7 +20,7 @@ INSTALLED_APPS = [
     'api',
 
     'rest_framework',
-    'django_filter',
+    'django_filters',
     'corsheaders',
     'django_extensions',
 
