@@ -18,6 +18,7 @@ class FlashCardSerializer(serializers.ModelSerializer):
         )
 
 class FlashCardCategorySerializer(serializers.ModelSerializer):
+
     class Meta:
         model = FlashCard
         fields = ('category',)
