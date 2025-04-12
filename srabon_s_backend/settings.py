@@ -80,16 +80,15 @@ DATABASES = {
     #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
 
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': tmpPostgres.path.replace('/', ''),
-    #     'USER': tmpPostgres.username,
-    #     'PASSWORD': tmpPostgres.password,
-    #     'HOST': tmpPostgres.hostname,
-    #     'PORT': 5432,
-    # }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': tmpPostgres.path.replace('/', ''),
+        'USER': tmpPostgres.username,
+        'PASSWORD': tmpPostgres.password,
+        'HOST': tmpPostgres.hostname,
+        'PORT': 5432,
+    }
 
-    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
 
 
