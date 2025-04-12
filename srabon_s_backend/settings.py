@@ -3,6 +3,7 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 from urllib.parse import urlparse
+import dj_database_url
 
 load_dotenv()
 
@@ -79,14 +80,16 @@ DATABASES = {
     #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
 
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': tmpPostgres.path.replace('/', ''),
-        'USER': tmpPostgres.username,
-        'PASSWORD': tmpPostgres.password,
-        'HOST': tmpPostgres.hostname,
-        'PORT': 5432,
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': tmpPostgres.path.replace('/', ''),
+    #     'USER': tmpPostgres.username,
+    #     'PASSWORD': tmpPostgres.password,
+    #     'HOST': tmpPostgres.hostname,
+    #     'PORT': 5432,
+    # }
+
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
 
 
