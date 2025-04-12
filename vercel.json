@@ -1,28 +1,30 @@
 {
+  "version": 2,
   "builds": [
+    {
+      "src": "srabon_s_backend/wsgi.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "15mb",
+        "runtime": "python3.13"
+      }
+    },
     {
       "src": "build_files.sh",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "staticfiles_build"
-      }
-    },
-    {
-      "src": "/srabon_s_backend/wsgi.py",
-      "use": "@vercel/python3.13",
-      "config": {
-        "maxLambdaSize": "15mb"
+        "distDir": "staticfiles"
       }
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "srabon_s_backend/wsgi.py"
-    },
-    {
       "src": "/static/(.*)",
       "dest": "/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "srabon_s_backend/wsgi.py"
     }
   ]
 }
