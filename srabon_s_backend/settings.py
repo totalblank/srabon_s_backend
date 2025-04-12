@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-$zxiix*52$%shhs9%9t2@_h92lz*c+jh0@4tn&8%)o59zrh+s!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'srabon_s_backend.wsgi.application'
+WSGI_APPLICATION = 'srabon_s_backend.wsgi.app'
 
 
 tmpPostgres = urlparse(os.getenv("DATABASE_URL"))
