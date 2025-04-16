@@ -9,5 +9,5 @@ class FlashCardFilter(django_filters.FilterSet):
             'category': ['icontains'],
             'front': ['icontains'],
             'back': ['icontains'],
-            'author': ['iexact'],
+            'author': ['exact'],
         }
