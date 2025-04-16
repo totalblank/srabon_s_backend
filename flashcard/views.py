@@ -6,7 +6,7 @@ from flashcard.serializers import FlashCardSerializer, FlashCardCategorySerializ
 from flashcard.filters import FlashCardFilter
 
 class FlashCardListCreateAPIView(generics.ListCreateAPIView):
-    queryset = FlashCard.objects.all()
+    queryset = FlashCard.objects.all().order_by('front')
     serializer_class = FlashCardSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
     filterset_class = FlashCardFilter
