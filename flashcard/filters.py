@@ -7,4 +7,7 @@ class FlashCardFilter(django_filters.FilterSet):
         model = FlashCard
         fields = {
             'category': ['icontains'],
+            'front': ['icontains'],
+            'back': ['icontains'],
+            'author': ['iexact'],
         }
